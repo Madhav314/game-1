@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjsy4fbimdf53"]
+[gd_scene load_steps=4 format=3 uid="uid://cjsy4fbimdf53"]
 
 [ext_resource type="PackedScene" uid="uid://bs8m2smgw71y1" path="res://player.tscn" id="1_7ercl"]
 [ext_resource type="PackedScene" uid="uid://bjn2orhqbycor" path="res://bush.tscn" id="2_bcc0c"]
+[ext_resource type="PackedScene" uid="uid://8gbp2wp7h755" path="res://background.tscn" id="3_yjfb4"]
 
 [node name="World" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_7ercl")]
-position = Vector2(78, 23)
+position = Vector2(56, 44)
 
 [node name="bush" parent="." instance=ExtResource("2_bcc0c")]
-position = Vector2(121, 67)
+position = Vector2(115, 57)
+
+[node name="background" parent="." instance=ExtResource("3_yjfb4")]
+z_index = -1

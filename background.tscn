@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://8gbp2wp7h755"]
+
+[ext_resource type="Texture2D" uid="uid://bgbs0o323ici1" path="res://assets/Action RPG Resources/World/GrassBackground.png" id="1_uu3cp"]
+
+[node name="background" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 540.0
+offset_bottom = 360.0
+
+[node name="GrassBackground" type="Sprite2D" parent="ColorRect"]
+texture_repeat = 2
+position = Vector2(270, 180)
+texture = ExtResource("1_uu3cp")
+region_enabled = true
+region_rect = Rect2(0, 0, 540, 360)

@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://hngp4hadkuys"]
+
+[ext_resource type="Texture2D" uid="uid://d2013jh7upodu" path="res://assets/Action RPG Resources/Enemies/Bat.png" id="1_07o53"]
+[ext_resource type="Script" path="res://bat.gd" id="2_is152"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v0e10"]
+radius = 8.06226
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbyt5"]
+atlas = ExtResource("1_07o53")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khieu"]
+atlas = ExtResource("1_07o53")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_romwk"]
+atlas = ExtResource("1_07o53")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5peag"]
+atlas = ExtResource("1_07o53")
+region = Rect2(48, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0egnn"]
+atlas = ExtResource("1_07o53")
+region = Rect2(64, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_26xos"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbyt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khieu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_romwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5peag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0egnn")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("2_is152")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v0e10")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 3)
+scale = Vector2(1, 0.729167)
+sprite_frames = SubResource("SpriteFrames_26xos")
+animation = &"fly"
+frame_progress = 0.897845

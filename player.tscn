@@ -1,7 +1,8 @@
-[gd_scene load_steps=50 format=3 uid="uid://bs8m2smgw71y1"]
+[gd_scene load_steps=51 format=3 uid="uid://bs8m2smgw71y1"]
 
 [ext_resource type="Texture2D" uid="uid://ribvc2ih2k1y" path="res://assets/Action RPG Resources/Player/Player.png" id="1_1ym66"]
 [ext_resource type="Script" path="res://player.gd" id="1_k5ll7"]
+[ext_resource type="Texture2D" uid="uid://fy0jog4a5dlx" path="res://assets/Action RPG Resources/Shadows/MediumShadow.png" id="3_yplj6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4kkak"]
 height = 28.0
@@ -305,7 +306,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"running_down",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -328,7 +329,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"running_left",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -351,7 +352,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"running_right",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -374,7 +375,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"running_up",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="GDScript" id="GDScript_ugb5t"]
@@ -400,5 +401,10 @@ shape = SubResource("CapsuleShape2D_4kkak")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_hth40")
-animation = &"idle_down"
+animation = &"running_down"
+frame_progress = 0.267688
 script = SubResource("GDScript_ugb5t")
+
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 11)
+texture = ExtResource("3_yplj6")

@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjsy4fbimdf53"]
+[gd_scene load_steps=6 format=3 uid="uid://cjsy4fbimdf53"]
 
 [ext_resource type="PackedScene" uid="uid://bs8m2smgw71y1" path="res://player.tscn" id="1_7ercl"]
+[ext_resource type="Script" path="res://world.gd" id="1_gb57k"]
 [ext_resource type="PackedScene" uid="uid://bjn2orhqbycor" path="res://bush.tscn" id="2_bcc0c"]
 [ext_resource type="PackedScene" uid="uid://8gbp2wp7h755" path="res://background.tscn" id="3_yjfb4"]
-[ext_resource type="PackedScene" uid="uid://hngp4hadkuys" path="res://bat.tscn" id="4_nwolc"]
+
+[sub_resource type="Curve2D" id="Curve2D_o1soh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -107, -92, 0, 0, 0, 0, 679, -90, 0, 0, 0, 0, 675, 452, 0, 0, 0, 0, -102, 452, 0, 0, 0, 0, -107, -91)
+}
+point_count = 5
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_gb57k")
 
 [node name="player" parent="." instance=ExtResource("1_7ercl")]
 position = Vector2(56, 44)
@@ -16,5 +23,18 @@ position = Vector2(115, 57)
 [node name="background" parent="." instance=ExtResource("3_yjfb4")]
 z_index = -1
 
-[node name="bat" parent="." instance=ExtResource("4_nwolc")]
-position = Vector2(277, 99)
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(58.6845, 47.125)
+scale = Vector2(0.735369, 0.71875)
+curve = SubResource("Curve2D_o1soh")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(-107, -92)
+rotation = 0.00254452
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

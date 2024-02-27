@@ -401,8 +401,8 @@ shape = SubResource("CapsuleShape2D_4kkak")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_hth40")
-animation = &"running_down"
-frame_progress = 0.267688
+animation = &"attack_right"
+frame_progress = 0.214772
 script = SubResource("GDScript_ugb5t")
 
 [node name="shadow" type="Sprite2D" parent="."]

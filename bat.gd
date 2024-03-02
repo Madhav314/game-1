@@ -10,12 +10,9 @@ func _physics_process(delta):
 	velocity = direction * 50
 	move_and_slide()
 
-
-#Bats get killed in one hit, need to fix
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("sword"):
-		health =- 1
-		print(health)
+		health = health - 5
 	if(health <= 0):
 		queue_free()
 	

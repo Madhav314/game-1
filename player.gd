@@ -2,19 +2,18 @@ extends CharacterBody2D
 
 @onready var _animated_sprite = $AnimatedSprite2D
 
-@onready var face = "down"
+@onready var face: String = "down"
 
 var attacking: bool = false
+
+var health: int = 100
 
 func _physics_process(delta):
 
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 	if(Input.is_action_pressed("attack") or attacking):
-		attacking = true
-		_animated_sprite.play("attack_" + face)
-		if(_animated_sprite.frame == 3):
-			attacking = false
+		Attack()
 	elif(Input.is_action_pressed("move_left")):
 		_animated_sprite.play("running_left")
 		face = "left"
@@ -34,3 +33,13 @@ func _physics_process(delta):
 	velocity = direction * 100
 	move_and_slide()
 
+func Attack():
+	attacking = true
+	get_node("AnimatedSprite2D/hitbox/" + face).disabled = false
+	_animated_sprite.play("attack_" + face)
+	if(_animated_sprite.frame == 3):
+		get_node("AnimatedSprite2D/hitbox/" + face).disabled = true
+		attacking = false
+
+func _on_Area_body_entered(area):
+	print("hit")

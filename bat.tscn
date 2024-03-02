@@ -1,10 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://hngp4hadkuys"]
+[gd_scene load_steps=11 format=3 uid="uid://hngp4hadkuys"]
 
 [ext_resource type="Texture2D" uid="uid://d2013jh7upodu" path="res://assets/Action RPG Resources/Enemies/Bat.png" id="1_07o53"]
 [ext_resource type="Script" path="res://bat.gd" id="2_is152"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_v0e10"]
-radius = 8.06226
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nbyt5"]
 atlas = ExtResource("1_07o53")
@@ -49,11 +46,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lse6y"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v0e10"]
+radius = 8.0
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("2_is152")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_v0e10")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 3)
@@ -61,3 +61,14 @@ scale = Vector2(1, 0.729167)
 sprite_frames = SubResource("SpriteFrames_26xos")
 animation = &"fly"
 frame_progress = 0.897845
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CircleShape2D_lse6y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v0e10")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_area_2d_area_entered"]

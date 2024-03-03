@@ -40,6 +40,3 @@ func Attack():
 	if(_animated_sprite.frame == 3):
 		get_node("AnimatedSprite2D/hitbox/" + face).disabled = true
 		attacking = false
-
-func _on_Area_body_entered(area):
-	print("hit")

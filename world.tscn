@@ -15,6 +15,7 @@ point_count = 5
 script = ExtResource("1_gb57k")
 
 [node name="player" parent="." instance=ExtResource("1_7ercl")]
+z_index = 1
 position = Vector2(244, 140)
 up_direction = Vector2(0.962822, -0.270137)
 

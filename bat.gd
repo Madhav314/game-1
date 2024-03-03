@@ -18,7 +18,5 @@ func _physics_process(delta):
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("sword"):
-		health = health - 5
-		print(health)
+		health = health - 5	
 
-		

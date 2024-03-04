@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 @onready var _animated_sprite = $AnimatedSprite2D
+@onready var _audio_sprite = $AudioStreamPlayer2D
 @onready var player := $"../player"
+
 var health: int = 10
 
 func _physics_process(delta):
@@ -19,4 +21,6 @@ func _physics_process(delta):
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("sword"):
 		health = health - 5	
+		_audio_sprite.stream = load("res://assets/Action RPG Resources/Music and Sounds/Hit.wav")
+		_audio_sprite.play()
 

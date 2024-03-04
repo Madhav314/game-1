@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-@onready var _animated_sprite = $AnimatedSprite2D
-
-@onready var face: String = "down"
-
 var attacking: bool = false
 
 var health: int = 100
+
+@onready var _animated_sprite = $AnimatedSprite2D
+
+@onready var face: String = "down"
 
 func _physics_process(delta):
 

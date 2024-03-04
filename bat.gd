@@ -20,7 +20,11 @@ func _physics_process(delta):
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("sword"):
-		health = health - 5	
-		_audio_sprite.stream = load("res://assets/Action RPG Resources/Music and Sounds/Hit.wav")
-		_audio_sprite.play()
+		health = health - 5
+		if(health > 0):
+			_audio_sprite.stream = load("res://assets/Action RPG Resources/Music and Sounds/Hit.wav")
+			_audio_sprite.play()
+		else:
+			_audio_sprite.stream = load("res://assets/Action RPG Resources/Music and Sounds/EnemyDie.wav")
+			_audio_sprite.play()
 

@@ -444,3 +444,5 @@ position = Vector2(0, 11)
 texture = ExtResource("3_4ruur")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]

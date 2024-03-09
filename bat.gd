@@ -28,5 +28,4 @@ func _on_area_2d_area_entered(area):
 		else:
 			_audio_sprite.stream = load("res://assets/Action RPG Resources/Music and Sounds/EnemyDie.wav")
 			_audio_sprite.play()
-	
 

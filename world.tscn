@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjsy4fbimdf53"]
+[gd_scene load_steps=9 format=3 uid="uid://cjsy4fbimdf53"]
 
 [ext_resource type="PackedScene" uid="uid://bs8m2smgw71y1" path="res://player.tscn" id="1_7ercl"]
 [ext_resource type="Script" path="res://world.gd" id="1_gb57k"]
 [ext_resource type="PackedScene" uid="uid://bjn2orhqbycor" path="res://bush.tscn" id="2_bcc0c"]
 [ext_resource type="PackedScene" uid="uid://8gbp2wp7h755" path="res://background.tscn" id="3_yjfb4"]
 [ext_resource type="AudioStream" uid="uid://dybnmkkbyu350" path="res://assets/Action RPG Resources/Music and Sounds/Music.mp3" id="5_hjy6c"]
+[ext_resource type="PackedScene" uid="uid://bmuvxtuqat56a" path="res://h_box_container.tscn" id="6_mjinw"]
+[ext_resource type="Script" path="res://Label.gd" id="7_gu5co"]
 
 [sub_resource type="Curve2D" id="Curve2D_o1soh"]
 _data = {
@@ -57,5 +59,20 @@ position = Vector2(512, 152)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_hjy6c")
 autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" parent="CanvasLayer" instance=ExtResource("6_mjinw")]
+offset_left = 461.0
+offset_top = 9.0
+offset_right = 531.0
+offset_bottom = 21.0
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 31.0
+script = ExtResource("7_gu5co")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

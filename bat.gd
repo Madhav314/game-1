@@ -16,6 +16,7 @@ func _physics_process(delta):
 	else:
 		_animated_sprite.play("death")
 		if(_animated_sprite.frame == 9):
+			player.kills += 1
 			queue_free()
 
 func _on_area_2d_area_entered(area):
@@ -27,4 +28,5 @@ func _on_area_2d_area_entered(area):
 		else:
 			_audio_sprite.stream = load("res://assets/Action RPG Resources/Music and Sounds/EnemyDie.wav")
 			_audio_sprite.play()
+	
 

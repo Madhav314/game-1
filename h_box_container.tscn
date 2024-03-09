@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmuvxtuqat56a"]
+
+[ext_resource type="PackedScene" uid="uid://q4jhld5qgx8o" path="res://heart.tscn" id="1_2d3xi"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+offset_right = 70.0
+offset_bottom = 12.0
+theme_override_constants/separation = 0
+
+[node name="Panel" parent="." instance=ExtResource("1_2d3xi")]
+layout_mode = 2
+
+[node name="Panel2" parent="." instance=ExtResource("1_2d3xi")]
+layout_mode = 2
+
+[node name="Panel3" parent="." instance=ExtResource("1_2d3xi")]
+layout_mode = 2
+
+[node name="Panel4" parent="." instance=ExtResource("1_2d3xi")]
+layout_mode = 2
+
+[node name="Panel5" parent="." instance=ExtResource("1_2d3xi")]
+layout_mode = 2

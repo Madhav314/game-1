@@ -2,8 +2,6 @@ extends CharacterBody2D
 
 var attacking: bool = false
 
-var health: int = 5
-
 var speed: int = 100
 
 var kills: int = 0

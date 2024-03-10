@@ -1,14 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://q4jhld5qgx8o"]
+[gd_scene load_steps=3 format=3 uid="uid://q4jhld5qgx8o"]
 
-[ext_resource type="Texture2D" uid="uid://bvjixbmxj3ua0" path="res://assets/Action RPG Resources/UI/HeartUIFull.png" id="1_omq4u"]
+[ext_resource type="Script" path="res://heart.gd" id="1_3r8kd"]
+[ext_resource type="Texture2D" uid="uid://bdug3npcsq042" path="res://assets/Action RPG Resources/UI/image__1_-removebg-preview.png" id="1_te8cw"]
 
 [node name="Panel" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(14, 12)
 offset_right = 14.0
 offset_bottom = 12.0
+script = ExtResource("1_3r8kd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(7, 6)
 scale = Vector2(0.933333, 1.09091)
-texture = ExtResource("1_omq4u")
+texture = ExtResource("1_te8cw")
+hframes = 2

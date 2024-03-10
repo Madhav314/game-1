@@ -1,5 +1,10 @@
 extends Node2D
 
+@onready var health = $CanvasLayer/HBoxContainer
+
+func _ready():
+	health.set_max_health(5)
+
 func _spawn():
 	var bat = preload("res://bat.tscn").instantiate()
 	%PathFollow2D.progress_ratio = randf()

@@ -9,7 +9,7 @@ radius = 13.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_rgbtl"]
 radius = 5.0
 
-[node name="bush" type="StaticBody2D"]
+[node name="bush" type="StaticBody2D" groups=["save"]]
 script = ExtResource("1_bl88w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

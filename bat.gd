@@ -37,3 +37,13 @@ func _on_area_2d_area_entered(area):
 		queue_free()
 		if(bush.health <= 0):
 			get_tree().quit()
+
+func save():
+	var save_dict = {
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+		"pos_x" : position.x,
+		"pos_y" : position.y,
+		"health" : health
+	}
+	return save_dict

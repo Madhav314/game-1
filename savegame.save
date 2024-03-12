@@ -1,0 +1,2 @@
+{"filename":"res://player.tscn","kills":0,"parent":"/root/World","pos_x":261,"pos_y":115}
+{"filename":"res://bush.tscn","health":5,"parent":"/root/World","pos_x":261,"pos_y":166}
